@@ -27,4 +27,4 @@ Since this was meant for personnal use, I will add libs used in my projects when
 - [classic](https://github.com/rxi/classic)
 - [lovedebug](https://github.com/flamendless/lovedebug)
 - [anim8](https://github.com/kikito/anim8)
-- [vector.lua](https://github.com/themousery/vector.lua
+- [vector.lua](https://github.com/themousery/vector.lua)

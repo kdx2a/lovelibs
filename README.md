@@ -1,12 +1,12 @@
 # lovelibs
 A small LÖVE 2D utility that downloads and 'update' common libs. Small personnal project, don't take it too seriously.
-Require Lua 5.1 or superior.
+Require Lua 5.1 or superior and `wget`.
 
 # usage
 Install a lib (see list of libs bellow)  
 `lovelibs install <package>`
 
-Insatll multiple libs  
+Install multiple libs  
 `lovelibs install <package> <package> <package> ...`
 
 Update libs  

@@ -1,0 +1,75 @@
+#!/usr/bin/lua
+
+local conf_path = '.lovelibs'
+local url = {}
+url.rawgithub = 'https://raw.githubusercontent.com/'
+
+local libs = {
+  bump = url.rawgithub..'kikito/bump.lua/master/bump.lua',
+  push = url.rawgithub..'Ulydev/push/master/push.lua',
+  baton = url.rawgithub..'tesselode/baton/master/baton.lua',
+  classic = url.rawgithub..'rxi/classic/master/classic.lua',
+  lovedebug =
+    url.rawgithub..'flamendless/lovedebug/master/lovedebug.lua',
+  anim8 = url.rawgithub..'kikito/anim8/master/anim8.lua',
+  vector = url.rawgithub..'themousery/vector.lua/master/vector.lua',
+}
+
+local function install(name)
+  os.execute'mkdir -p libs'
+  if not libs[name] then
+    print('Can\'t find', name)
+    return nil
+  end
+  --else
+  print('Downloading', name)
+  os.execute('wget '..libs[name]..' -q -O libs/'..name..'.lua')
+  --see if the lib is in config
+  local exists
+  local file = io.open(conf_path, 'r')
+  if file then
+    for line in file:lines() do
+      local line = line:lower()
+      if line == name then
+        exists = true
+      end
+    end
+    file:close()
+  end
+  if not exists then
+    local file = io.open(conf_path, 'a')
+    file:write(name, '\n')
+  end
+end
+
+local function update()
+  local file = io.open(conf_path, 'r')
+  if not file then --no configuration, nothing to update
+    print'Nothing to update'
+    return nil
+  end
+  --else
+  local queue = {}
+  for line in file:lines() do
+    local line = line:lower()
+    if line ~= '' and line:sub(1, 1) ~= '#' then
+      --check if line contains anything interesting
+      table.insert(queue, line)
+    end
+  end
+  file:close()
+  --install the queue
+  for _, v in ipairs(queue) do
+    install(v)
+  end
+end
+
+local command = arg[1]
+
+if command == 'update' then
+  update()
+elseif command == 'install' then
+  for i=2, #arg, 1 do
+    install(arg[i])
+  end
+end

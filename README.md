@@ -3,23 +3,22 @@ A small LÖVE 2D utility that downloads and 'update' common libs. Small personna
 Require Lua 5.1 or superior and `wget`.
 
 # usage
-Install a lib (see list of libs bellow)  
-`lovelibs install <package>`
+Install lib(s) (see list of libs bellow)  
+`lovelibs install <lib(s)>`
 
-Install multiple libs  
-`lovelibs install <package> <package> <package> ...`
+Remove lib(s)  
+`lovelibs remove <lib(s)>`
+
+List installed libs  
+`lovelibs list`
 
 Update libs  
 `lovelibs update`
 
-Remove lib  
-*TODO*
-
-# todo
-`lovelibs remove` command, installation/update from URL.
-
 # libs
-Since this was meant for personnal use, I will add libs used in my projects when I need them. Feel free to add on the list and make a pull request.
+Since this was create for personnal projects, I will add libs used in my
+projects when I need them. Feel free to add on the list and make a pull
+request.
 
 - [bump](https://github.com/kikito/bump.lua)
 - [push](https://github.com/Ulydev/push)

@@ -30,6 +30,7 @@ local function install(name)
   if file then
     for line in file:lines() do
       local line = line:lower()
+      line = line:sub(2, -2)
       if line == name then
         exists = true
       end
@@ -38,7 +39,7 @@ local function install(name)
   end
   if not exists then
     local file = io.open(conf_path, 'a')
-    file:write(name, '\n')
+    file:write(' ', name, ' \n')
   end
 end
 
@@ -54,13 +55,52 @@ local function update()
     local line = line:lower()
     if line ~= '' and line:sub(1, 1) ~= '#' then
       --check if line contains anything interesting
-      table.insert(queue, line)
+      table.insert(queue, line:sub(2, -2))
     end
   end
   file:close()
   --install the queue
   for _, v in ipairs(queue) do
     install(v)
+  end
+end
+
+local function remove(name)
+  --remove the lib from conf
+  local file_content = ''
+  local file = io.open(conf_path, 'r')
+  if not file then
+    print'No lib installed'
+    return nil
+  end
+  --else
+  file_content = file:read()
+  file:close()
+  if not file_content then
+    print'No lib installed'
+    return nil
+  end
+  --else
+  file_content = file_content:gsub(' '..name..' ', '')
+  file = io.open(conf_path, 'w')
+  file:write(file_content)
+  --remove lib from libs directory
+  os.execute('rm libs/'..name..'.lua -v')
+end
+
+local function list()
+  local file = io.open(conf_path, 'r')
+  if not file then
+    print'No lib installed'
+    return nil
+  end
+  --else
+  --print all installed libs
+  for line in file:lines() do
+    local line = line:lower()
+    if line ~= '' and line:sub(1, 1) ~= '#' then
+      print(line:sub(2, -2))
+    end
   end
 end
 
@@ -72,4 +112,10 @@ elseif command == 'install' then
   for i=2, #arg, 1 do
     install(arg[i])
   end
+elseif command == 'remove' then
+  for i=2, #arg, 1 do
+    remove(arg[i])
+  end
+elseif command == 'list' then
+  list()
 end

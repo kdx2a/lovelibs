@@ -20,10 +20,11 @@ Since this was create for personnal projects, I will add libs used in my
 projects when I need them. Feel free to add on the list and make a pull
 request.
 
-- [bump](https://github.com/kikito/bump.lua)
-- [push](https://github.com/Ulydev/push)
-- [baton](https://github.com/tesselode/baton)
-- [classic](https://github.com/rxi/classic)
-- [lovedebug](https://github.com/flamendless/lovedebug)
 - [anim8](https://github.com/kikito/anim8)
+- [baton](https://github.com/tesselode/baton)
+- [bump](https://github.com/kikito/bump.lua)
+- [deep](https://github.com/Nikaoto/deep)
+- [classic](https://github.com/rxi/classic)
+- [push](https://github.com/Ulydev/push)
+- [lovedebug](https://github.com/flamendless/lovedebug)
 - [vector.lua](https://github.com/themousery/vector.lua)

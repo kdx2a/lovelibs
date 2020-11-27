@@ -3,7 +3,10 @@ A small LÖVE 2D utility that downloads and 'update' common libs. Small personna
 Require Lua 5.1 or superior and `wget`.
 
 # usage
-Install lib(s) (see list of libs bellow)  
+List all available libs  
+`lovelibs list all`
+
+Install lib(s)  
 `lovelibs install <lib(s)>`
 
 Remove lib(s)  

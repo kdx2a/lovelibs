@@ -106,6 +106,12 @@ local function list()
   end
 end
 
+local function list_all()
+  for i, _ in pairs(libs) do
+    print(i)
+  end
+end
+
 local command = arg[1]
 
 if command == 'update' then
@@ -119,5 +125,7 @@ elseif command == 'remove' then
     remove(arg[i])
   end
 elseif command == 'list' then
-  list()
+  if arg[2] == 'all' then
+    list_all()
+  else list() end
 end

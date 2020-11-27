@@ -27,4 +27,5 @@ request.
 - [classic](https://github.com/rxi/classic)
 - [push](https://github.com/Ulydev/push)
 - [lovedebug](https://github.com/flamendless/lovedebug)
+- [shack](https://github.com/Ulydev/shack)
 - [vector.lua](https://github.com/themousery/vector.lua)

@@ -13,6 +13,7 @@ local libs = {
   lovedebug =
     url.rawgithub..'flamendless/lovedebug/master/lovedebug.lua',
   push = url.rawgithub..'Ulydev/push/master/push.lua',
+  shack = url.rawgithub..'Ulydev/shack/master/shack.lua',
   vector = url.rawgithub..'themousery/vector.lua/master/vector.lua',
 }
 

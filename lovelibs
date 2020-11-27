@@ -5,13 +5,14 @@ local url = {}
 url.rawgithub = 'https://raw.githubusercontent.com/'
 
 local libs = {
-  bump = url.rawgithub..'kikito/bump.lua/master/bump.lua',
-  push = url.rawgithub..'Ulydev/push/master/push.lua',
+  anim8 = url.rawgithub..'kikito/anim8/master/anim8.lua',
   baton = url.rawgithub..'tesselode/baton/master/baton.lua',
+  bump = url.rawgithub..'kikito/bump.lua/master/bump.lua',
   classic = url.rawgithub..'rxi/classic/master/classic.lua',
+  deep = url.rawgithub..'Nikaoto/deep/master/deep.lua',
   lovedebug =
     url.rawgithub..'flamendless/lovedebug/master/lovedebug.lua',
-  anim8 = url.rawgithub..'kikito/anim8/master/anim8.lua',
+  push = url.rawgithub..'Ulydev/push/master/push.lua',
   vector = url.rawgithub..'themousery/vector.lua/master/vector.lua',
 }
 
